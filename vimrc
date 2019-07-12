@@ -99,11 +99,6 @@ Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 call plug#end()
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'benmills/vimux'
-call vundle#end() 
-
 let g:rainbow_active = 1
 "let g:hybrid_transparent_background = 1
 
