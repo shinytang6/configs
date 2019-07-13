@@ -97,6 +97,14 @@ Plug 'tomasr/molokai'
 Plug 'jez/vim-better-sml'
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
+Plug 'yggdroot/indentline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'brooth/far.vim'
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'lfv89/vim-interestingwords'
 call plug#end()
 
 let g:rainbow_active = 1
@@ -105,3 +113,16 @@ let g:rainbow_active = 1
 set background=dark
 "colorscheme molokai
 colorscheme hybrid_material
+
+let mapleader=','
+
+nnoremap <leader>v :NERDTreeFind<cr>
+nnoremap <leader>g :NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
+let NERDTreeIgnore = [
+			\ '\.git$', '\.hg$', '\.svn$', '\.stversion$', '\.pyc$', '\.pyo$', '\.svn$', '\.swp$',
+			\ '\.DS_Store$', '\.sass-cache$', '__pycache__$', '\.egg-info$', '\.ropeproject$',
+			\ ]
+
+let g:ctrlp_map = '<c-p>'
+nmap ss <Plug>(easymotion-s2)
