@@ -105,6 +105,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'brooth/far.vim'
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'lfv89/vim-interestingwords'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 let g:rainbow_active = 1
