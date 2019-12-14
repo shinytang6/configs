@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="/home/tangl/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -66,12 +66,34 @@ plugins=(
 	git
 	extract
 	z
+	sudo
 	sublime
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+
+	# 非默认插件需要自己下载到 .oh-my-zsh 目录下才能在plugins里导入
+	# 后面采用zplug管理非默认插件
+	# zsh-autosuggestions
+	# zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# zplug plugins
+source ~/.zplug/init.zsh
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+# load each time when open a zsh
+# zplug load --verbose
+zplug load
 
 # User configuration
 
